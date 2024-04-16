@@ -4,7 +4,7 @@ import About from "./pages/About";
 
 const App = () => {
   return (
-    <div className="text-text bg-background">
+    <div className="text-text">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
