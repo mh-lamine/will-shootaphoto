@@ -22,7 +22,7 @@ const Home = () => {
         </div>
         <span className="w-full border-t-2 border-t-secondary "></span>
         <h1 className="uppercase font-mono tracking-wide  text-4xl font-bold opacity-25">
-          shootaphoto
+          shoottaphoto
         </h1>
 
         <span className="w-full border-t-2 border-t-secondary "></span>
