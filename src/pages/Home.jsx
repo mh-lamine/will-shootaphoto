@@ -7,7 +7,7 @@ import logo from "../assets/profil_pic.jpeg";
 
 const Home = () => {
   return (
-    <div className="py-6 flex flex-col items-center gap-10">
+    <div className="py-6 h-screen flex flex-col items-center justify-center gap-10">
       <div>
         <Cards pics={[umbrella, kimono]} />
         <p className="text-center">Passion</p>
