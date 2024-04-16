@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { motion } from "framer-motion";
+import { motion, spring } from "framer-motion";
 
 const Cards = ({ pics }) => {
   return (
@@ -16,7 +16,7 @@ const Cards = ({ pics }) => {
           animate={{
             x: index % 2 === 0 ? 20 : -20,
             rotate: index % 2 === 0 ? -6 : 6,
-            transition: { duration: 1 },
+            transition: { type: spring, duration: .5,},
           }}
         />
       ))}

@@ -9,11 +9,17 @@ const Parallax = ({ id, image }) => {
   const y = useParallax(scrollYProgress, 300);
 
   return (
-    <section className="relative flex items-center justify-center rounded-sm overflow-hidden shadow-lg h-screen snap-center">
+    <section className="relative flex items-center justify-center h-screen snap-center">
       <div ref={ref}>
-        <img src={image} className="w-72" />
+        <img
+          src={image}
+          className="w-72 rounded-sm overflow-hidden shadow-lg"
+        />
       </div>
-      <motion.h2 style={{ y }} className="absolute text-4xl tracking-widest mix-blend-exclusion">{`#00${id + 1}`}</motion.h2>
+      <motion.h2
+        style={{ y }}
+        className="absolute text-4xl tracking-widest mix-blend-exclusion"
+      >{`#00${id + 1}`}</motion.h2>
     </section>
   );
 };
