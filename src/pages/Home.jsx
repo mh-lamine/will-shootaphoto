@@ -4,6 +4,7 @@ import Cards from "../components/Cards";
 import kitchen from "../assets/kitchen.jpg";
 import kitchen2 from "../assets/kitchen2.jpg";
 import logo from "../assets/profil_pic.jpeg";
+import { motion } from "framer-motion";
 
 const Home = () => {
   return (
@@ -20,12 +21,30 @@ const Home = () => {
             className="w-16 rounded-full shadow-lg"
           />
         </div>
-        <span className="w-full border-t-2 border-t-secondary "></span>
+        <motion.span
+          initial={{
+            x: -500,
+          }}
+          animate={{
+            x: 0,
+            transition: { duration: 0.6 },
+          }}
+          className="w-full border-t-2 border-t-secondary "
+        ></motion.span>
         <h1 className="uppercase font-mono tracking-wide  text-4xl font-bold opacity-25">
           shoottaphoto
         </h1>
 
-        <span className="w-full border-t-2 border-t-secondary "></span>
+        <motion.span
+          initial={{
+            x: 500,
+          }}
+          animate={{
+            x: 0,
+            transition: { duration: 0.6 },
+          }}
+          className="w-full border-t-2 border-t-secondary "
+        ></motion.span>
       </div>
       <div>
         <p className="text-center">Détermination</p>
