@@ -30,7 +30,7 @@ const Header = () => {
   //     }, 50);
   // }
   return (
-    <div className="h-screen flex flex-col items-center justify-center gap-6 p-2 bg-background">
+    <div className="h-screen flex flex-col items-center justify-center gap-6 p-2 bg-background snap-center">
       <div className="flex flex-col justify-center p-4 gap-8">
         <Cards pics={[umbrella, kimono]} />
         <p className="text-center">Passion</p>
