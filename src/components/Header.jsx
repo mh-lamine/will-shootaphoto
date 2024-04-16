@@ -7,9 +7,31 @@ import logo from "../assets/profil_pic.jpeg";
 import { motion } from "framer-motion";
 
 const Header = () => {
+  // window.onload = () => {
+  //   const glitchyWord = document.querySelector("#glitchy-word");
+  //   const letters = "abcdefghijklmnopqrstuvwxyz";
+
+  //     let iterations = 0;
+  //     const interval = setInterval(() => {
+  //       glitchyWord.innerText = glitchyWord.innerText
+  //         .split("")
+  //         .map((letter, index) => {
+  //           if (index < iterations) {
+  //             return glitchyWord.dataset.value[index];
+  //           }
+  //           return letters[Math.floor(Math.random() * 26)];
+  //         })
+  //         .join("");
+
+  //       if (iterations >= glitchyWord.innerText.length) {
+  //         clearInterval(interval);
+  //       }
+  //       iterations += 1 / 4;
+  //     }, 50);
+  // }
   return (
-    <div className=" h-screen flex flex-col items-center justify-center gap-6 p-2 bg-background">
-      <div className="flex flex-col items-center justify-center p-5">
+    <div className="h-screen flex flex-col items-center justify-center gap-6 p-2 bg-background">
+      <div className="flex flex-col justify-center p-4 gap-8">
         <Cards pics={[umbrella, kimono]} />
         <p className="text-center">Passion</p>
       </div>
@@ -31,7 +53,7 @@ const Header = () => {
           }}
           className="w-full border-t-2 border-t-secondary "
         ></motion.span>
-        <h1 className="uppercase font-mono tracking-wide  text-4xl font-bold opacity-25">
+        <h1 id="glitchyWord" className="uppercase font-mono tracking-wide  text-4xl font-bold opacity-25">
           shoottaphoto
         </h1>
 
@@ -46,7 +68,7 @@ const Header = () => {
           className="w-full border-t-2 border-t-secondary "
         ></motion.span>
       </div>
-      <div className="flex flex-col items-center justify-center p-5 gap-4">
+      <div className="flex flex-col justify-center p-4 gap-8">
         <p className="text-center">Détermination</p>
         <Cards pics={[kitchen, kitchen2]} />
       </div>

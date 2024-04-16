@@ -3,13 +3,12 @@ import { motion } from "framer-motion";
 
 const Cards = ({ pics }) => {
   return (
-    <div className="grid grid-cols-2 p-4">
+    <div className="flex">
       {pics.map((pic, index) => (
-        // index % 2 === 0 ? (
         <motion.img
           key={index}
           src={pic}
-          className={"shadow-xl rounded-sm "}
+          className={"shadow-xl rounded-sm w-1/2 max-h-[300px]"}
           initial={{
             rotate: index % 2 === 0 ? 5 : -5,
             x: index % 2 === 0 ? 150 : -150,

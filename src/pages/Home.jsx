@@ -6,8 +6,8 @@ const Home = () => {
   return (
     <div>
         {/* <ScrollTimeline /> */}
-      <Header />
-      <Hero />
+      <Header/>
+      <Hero/>
     </div>
   );
 }
