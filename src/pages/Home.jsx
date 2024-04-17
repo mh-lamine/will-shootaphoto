@@ -1,15 +1,66 @@
-import Header from '../components/Header';
-import Hero from '../components/Hero';
-// import ScrollTimeline from '../components/ScrollTimeline';
+import logo from "../assets/profil_pic.jpeg";
+import { motion } from "framer-motion";
 
 const Home = () => {
+  // window.onload = () => {
+  //   const glitchyWord = document.querySelector("#glitchy-word");
+  //   const letters = "abcdefghijklmnopqrstuvwxyz";
+
+  //     let iterations = 0;
+  //     const interval = setInterval(() => {
+  //       glitchyWord.innerText = glitchyWord.innerText
+  //         .split("")
+  //         .map((letter, index) => {
+  //           if (index < iterations) {
+  //             return glitchyWord.dataset.value[index];
+  //           }
+  //           return letters[Math.floor(Math.random() * 26)];
+  //         })
+  //         .join("");
+
+  //       if (iterations >= glitchyWord.innerText.length) {
+  //         clearInterval(interval);
+  //       }
+  //       iterations += 1 / 4;
+  //     }, 50);
+  // }
   return (
-    <div>
-        {/* <ScrollTimeline /> */}
-      <Header/>
-      <Hero/>
+    <div className="h-screen flex items-center justify-between gap-2 bg-background relative">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-overlay">
+        <img
+          src={logo}
+          alt="home logo"
+          className="w-16 rounded-full shadow-lg"
+        />
+      </div>
+      <motion.span
+        initial={{
+          x: -500,
+        }}
+        animate={{
+          x: 0,
+          transition: { duration: 0.6 },
+        }}
+        className="w-full border-t-2 border-t-secondary "
+      ></motion.span>
+      <h1
+        id="glitchyWord"
+        className="uppercase font-mono tracking-wider text-center text-4xl font-bold opacity-25"
+      >
+        tukala biduaya
+      </h1>
+      <motion.span
+        initial={{
+          x: 500,
+        }}
+        animate={{
+          x: 0,
+          transition: { duration: 0.6 },
+        }}
+        className="w-full border-t-2 border-t-secondary "
+      ></motion.span>
     </div>
   );
-}
+};
 
-export default Home
+export default Home;

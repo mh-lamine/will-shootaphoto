@@ -1,8 +1,0 @@
-html {
-  scroll-snap-type: y mandatory;
-}
-
-.bg-parallax {
-  background: url('./assets/A56935AD-0244-4EFE-AE78-18C024564140.png') 65% 35% no-repeat;
-  background-attachment: fixed;
-}
