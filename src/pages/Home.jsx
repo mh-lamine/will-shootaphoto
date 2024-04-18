@@ -1,5 +1,6 @@
-import logo from "../assets/profil_pic.jpeg";
-import { motion } from "framer-motion";
+import Gallery from "../components/Gallery";
+import Header from "../components/Header";
+import Typewriter from "typewriter-effect";
 
 const Home = () => {
   // window.onload = () => {
@@ -25,40 +26,36 @@ const Home = () => {
   //     }, 50);
   // }
   return (
-    <div className="h-screen flex items-center justify-between gap-2 bg-background relative">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-overlay">
-        <img
-          src={logo}
-          alt="home logo"
-          className="w-16 rounded-full shadow-lg"
-        />
+    <div className="text-text bg-background overflow-hidden">
+      <Header />
+      <Gallery />
+      <div className="h-screen flex flex-col gap-4 p-8">
+        <h2 className="text-4xl tracking-wider uppercase ">
+          <span className="border-b-2">Beh</span>ind the lens
+        </h2>
+        <p className="text-lg leading-8 flex">
+          <Typewriter
+            options={{
+              autoStart: true,
+              loop: true,
+            }}
+            onInit={(typewriter) => {
+              typewriter
+              .typeString("I am a photographer based in Toulouse.")
+              .pauseFor(1000)
+              .deleteChars(18)
+              .typeString("specialized in portrait.")
+              .pauseFor(1000)
+              .deleteChars(24)
+              .typeString(
+                "and I am passionate about capturing moments that last a lifetime..."
+                )
+                .start();
+              }
+            }
+          />
+        </p>
       </div>
-      <motion.span
-        initial={{
-          x: -500,
-        }}
-        animate={{
-          x: 0,
-          transition: { duration: 0.6 },
-        }}
-        className="w-full border-t-2 border-t-secondary "
-      ></motion.span>
-      <h1
-        id="glitchyWord"
-        className="uppercase font-mono tracking-wider text-center text-4xl font-bold opacity-25"
-      >
-        tukala biduaya
-      </h1>
-      <motion.span
-        initial={{
-          x: 500,
-        }}
-        animate={{
-          x: 0,
-          transition: { duration: 0.6 },
-        }}
-        className="w-full border-t-2 border-t-secondary "
-      ></motion.span>
     </div>
   );
 };
