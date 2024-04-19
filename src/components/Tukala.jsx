@@ -17,8 +17,8 @@ const Tukala = () => {
       <h1 className="uppercase font-mono tracking-wider text-center text-4xl font-bold opacity-25 px-4">
         Tukala
       </h1>
-      <div className="absolute w-20 translate-y-1/2 mix-blend-overlay -z-10 overflow-hidden">
-        <img src={logo} className="rounded-full" />
+      <div className="absolute w-20 overflow-hidden mix-blend-overlay -z-10">
+        <img src={logo} className="rounded-full translate-y-1/2" />
       </div>
       <motion.span
         initial={{
