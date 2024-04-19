@@ -3,7 +3,15 @@ import logo from "../assets/profil_pic.jpeg";
 
 const Header = () => {
   return (
-    <div className="h-screen flex items-center justify-between gap-2 bg-background relative">
+    <motion.div
+      initial={{ y: 0 }}
+      animate={{ y: "-100%" }}
+      
+      transition={{ delay: 1.5,
+        duration: 3,
+        type: "spring"}}
+      className="absolute inset-0 h-screen w-full flex items-center justify-between gap-2 bg-primary z-10"
+    >
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-overlay">
         <img
           src={logo}
@@ -37,8 +45,8 @@ const Header = () => {
         }}
         className="w-full border-t-2 border-t-secondary "
       ></motion.span>
-    </div>
+    </motion.div>
   );
-}
+};
 
-export default Header
+export default Header;

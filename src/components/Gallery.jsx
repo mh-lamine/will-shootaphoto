@@ -3,6 +3,7 @@ import primary2 from "../assets/primary2.png";
 
 const Gallery = () => {
   const images = [primary1, primary2];
+
   return (
     <div className="h-screen flex flex-col items-center justify-center p-4">
       <div className="grid grid-cols-2">
