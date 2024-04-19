@@ -1,11 +1,12 @@
+import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Gallery from "../components/Gallery";
+import Preview from "../components/Preview";
 
 const Home = () => {
   return (
     <div className="text-text bg-background flex flex-col">
       <Header />
-      <Gallery />
+      <Preview />
       <div>
         <div className=" flex flex-col gap-8 p-8">
           <h2 className="text-4xl tracking-wider uppercase ">
@@ -19,10 +20,7 @@ const Home = () => {
           </p>
         </div>
       </div>
-
-      <footer className="h-40 grid place-items-center border-t-accent border-t">
-        all rights reserved &copy; 2024 tukala biduaya
-      </footer>
+      <Footer />
     </div>
   );
 };
