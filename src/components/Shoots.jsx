@@ -9,9 +9,9 @@ const Shoots = ({ images, bg }) => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="relative h-screen bg-background snap-y snap-mandatory overflow-y-scroll snap-center"
+      className="relative h-screen bg-background overflow-y-scroll snap-y snap-mandatory snap-center"
     >
-      <div className="fixed inset-0 opacity-15 bg-secondary "></div>
+      <div className="fixed inset-0 opacity-15 bg-gray-50 "></div>
       {images.map((image, index) => (
         <div
           key={index}
