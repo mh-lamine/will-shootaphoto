@@ -10,38 +10,40 @@ const Header = () => {
     setIsVisible(false);
   };
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <>
-          <motion.div
-            initial={{ y: 0 }}
-            exit={{
-              y: "-100%",
-              transition: { duration: 0.5, ease: easeInOut },
-            }}
-            className="absolute top-0 left-0 bg-primary z-10 overflow-hidden"
-          >
-            <Tukala />
-          </motion.div>
-          <motion.div
-            initial={{ y: 0 }}
-            exit={{
-              y: "100%",
-              transition: { duration: 0.5, ease: easeInOut },
-            }}
-            className="absolute bottom-0 left-0 bg-primary z-10 overflow-hidden"
-          >
-            <Biduaya />
-            <button
-              onClick={toggleVisibility}
-              className="absolute bottom-0 left-1/2 -translate-x-1/2 p-20 z-20"
+    <div>
+      <AnimatePresence>
+        {isVisible && (
+          <>
+            <motion.div
+              initial={{ y: 0 }}
+              exit={{
+                y: "-100%",
+                transition: { duration: 0.5, ease: easeInOut },
+              }}
+              className="absolute top-0 left-0 bg-primary z-10 overflow-hidden"
             >
-              fleche vers le bas wai
-            </button>
-          </motion.div>
-        </>
-      )}
-    </AnimatePresence>
+              <Tukala />
+            </motion.div>
+            <motion.div
+              initial={{ y: 0 }}
+              exit={{
+                y: "100%",
+                transition: { duration: 0.5, ease: easeInOut },
+              }}
+              className="absolute bottom-0 left-0 bg-primary z-10 overflow-hidden"
+            >
+              <Biduaya />
+              <button
+                onClick={toggleVisibility}
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 p-20 z-20"
+              >
+                fleche vers le bas wai
+              </button>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 
