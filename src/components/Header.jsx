@@ -18,7 +18,7 @@ const Header = () => {
               initial={{ y: 0 }}
               exit={{
                 y: "-100%",
-                transition: { duration: 0.5, ease: easeInOut },
+                transition: { duration: 0.5, delay: 0.3, ease: easeInOut },
               }}
               className="h-full bg-primary z-10"
             >
@@ -28,16 +28,34 @@ const Header = () => {
               initial={{ y: 0 }}
               exit={{
                 y: "100%",
-                transition: { duration: 0.5, ease: easeInOut },
+                transition: { duration: 0.5, delay: 0.3, ease: easeInOut },
               }}
               className="h-full bg-primary z-10"
             >
               <Biduaya />
               <button
                 onClick={toggleVisibility}
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 p-20 z-20"
+                className="absolute bottom-20 left-1/2 -translate-x-1/2 p-20 z-20"
               >
-                fleche vers le bas wai
+                <motion.i
+                  initial={{
+                    y: 0,
+                  }}
+                  animate={{
+                    y: 50,
+                    transition: {
+                      duration: 0.5,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: easeInOut,
+                    },
+                  }}
+                  exit={{
+                    y: 200,
+                    transition: { duration: 0.5, ease: easeInOut },
+                  }}
+                  className="fa-solid fa-angles-down text-background text-3xl"
+                ></motion.i>
               </button>
             </motion.div>
           </div>

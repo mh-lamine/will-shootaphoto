@@ -3,13 +3,17 @@ import logo from "../assets/profil_pic.jpeg";
 
 const Tukala = () => {
   return (
-    <div className="h-full w-screen flex items-end justify-center">
+    <div className="h-full w-screen flex items-end justify-center overflow-hidden">
       <motion.span
         initial={{
           x: -500,
         }}
         animate={{
           x: -11.5,
+          transition: { duration: 0.6 },
+        }}
+        exit={{
+          x: -500,
           transition: { duration: 0.6 },
         }}
         className="w-full border-t border-t-secondary "
@@ -26,6 +30,10 @@ const Tukala = () => {
         }}
         animate={{
           x: 11.5,
+          transition: { duration: 0.6 },
+        }}
+        exit={{
+          x: 500,
           transition: { duration: 0.6 },
         }}
         className="w-full border-t border-t-secondary "

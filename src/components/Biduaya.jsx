@@ -12,6 +12,10 @@ const Biduaya = () => {
           x: 0,
           transition: { duration: 0.6 },
         }}
+        exit={{
+          x: -500,
+          transition: { duration: 0.6 },
+        }}
         className="w-full border-t border-t-secondary"
       ></motion.span>
       <h1 className="uppercase font-mono tracking-wider text-center text-4xl font-bold opacity-25 px-4">
@@ -26,6 +30,10 @@ const Biduaya = () => {
         }}
         animate={{
           x: 0,
+          transition: { duration: 0.6 },
+        }}
+        exit={{
+          x: 500,
           transition: { duration: 0.6 },
         }}
         className="w-full border-t border-t-secondary "

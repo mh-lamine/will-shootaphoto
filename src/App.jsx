@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import "./App.css";
 import Gallery from "./pages/Gallery";
 import Test from "./pages/Test";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const App = () => {
   return (
