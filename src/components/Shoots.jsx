@@ -1,14 +1,22 @@
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
-const Shoots = ({ images }) => {
+const Shoots = ({ images, bg }) => {
   return (
-    <div className="h-screen bg-background snap-y snap-mandatory overflow-y-scroll snap-center">
+    <div
+      style={{
+        backgroundImage: `url(${bg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      className="relative h-screen bg-background snap-y snap-mandatory overflow-y-scroll snap-center"
+    >
+      <div className="fixed inset-0 opacity-15 bg-secondary "></div>
       {images.map((image, index) => (
         <div
           key={index}
           className={
-            "h-screen w-screen grid place-items-center sticky top-0 snap-center"
+            "h-screen w-screen grid place-items-center sticky top-0 snap-center z-10"
           }
         >
           <motion.img
@@ -25,6 +33,7 @@ const Shoots = ({ images }) => {
 
 Shoots.propTypes = {
   images: PropTypes.array.isRequired,
+  bg: PropTypes.string.isRequired,
 };
 
 export default Shoots;
