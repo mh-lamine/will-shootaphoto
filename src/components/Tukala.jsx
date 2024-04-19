@@ -3,7 +3,7 @@ import logo from "../assets/profil_pic.jpeg";
 
 const Tukala = () => {
   return (
-    <div className="h-[50vh] w-screen flex items-end justify-center">
+    <div className="h-full w-screen flex items-end justify-center">
       <motion.span
         initial={{
           x: -500,
@@ -17,7 +17,7 @@ const Tukala = () => {
       <h1 className="uppercase font-mono tracking-wider text-center text-4xl font-bold opacity-25 px-4">
         Tukala
       </h1>
-      <div className="absolute w-20 overflow-hidden mix-blend-overlay -z-10">
+      <div className="absolute w-20 overflow-hidden mix-blend-overlay">
         <img src={logo} className="rounded-full translate-y-1/2" />
       </div>
       <motion.span

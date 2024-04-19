@@ -3,7 +3,7 @@ import logo from "../assets/profil_pic.jpeg";
 
 const Biduaya = () => {
   return (
-    <div className="h-[50vh] w-screen flex items-start justify-center overflow-hidden">
+    <div className="w-screen flex items-start justify-center overflow-hidden">
       <motion.span
         initial={{
           x: -500,
@@ -17,7 +17,7 @@ const Biduaya = () => {
       <h1 className="uppercase font-mono tracking-wider text-center text-4xl font-bold opacity-25 px-4">
         Biduaya
       </h1>
-      <div className="absolute w-20 overflow-hidden mix-blend-overlay -z-10">
+      <div className="absolute w-20 overflow-hidden mix-blend-overlay">
         <img src={logo} className="rounded-full -translate-y-1/2" />
       </div>
       <motion.span

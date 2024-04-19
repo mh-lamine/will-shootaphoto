@@ -10,17 +10,17 @@ const Header = () => {
     setIsVisible(false);
   };
   return (
-    <div className="absolute inset-0  flex flex-col justify-center">
+    <div className="fixed overflow-y-hidden z-10">
       <AnimatePresence>
         {isVisible && (
-          <>
+          <div className="h-screen flex flex-col items-center justify-center">
             <motion.div
               initial={{ y: 0 }}
               exit={{
                 y: "-100%",
                 transition: { duration: 0.5, ease: easeInOut },
               }}
-              className=" bg-primary z-10"
+              className="h-full bg-primary z-10"
             >
               <Tukala />
             </motion.div>
@@ -30,7 +30,7 @@ const Header = () => {
                 y: "100%",
                 transition: { duration: 0.5, ease: easeInOut },
               }}
-              className=" bg-primary z-10"
+              className="h-full bg-primary z-10"
             >
               <Biduaya />
               <button
@@ -40,7 +40,7 @@ const Header = () => {
                 fleche vers le bas wai
               </button>
             </motion.div>
-          </>
+          </div>
         )}
       </AnimatePresence>
     </div>
