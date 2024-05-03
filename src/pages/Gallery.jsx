@@ -20,13 +20,30 @@ import { useState } from "react";
 
 const Gallery = () => {
   const [mouseDownAt, setMouseDownAt] = useState(0);
+  const [percentage, setPercentage] = useState(0);
+  const [prevPercentage, setPrevPercentage] = useState(0);
   window.onmousedown = (e) => {
     console.log(e.clientX);
     setMouseDownAt(e.clientX);
   };
+  window.onmousemove = (e) => {
+    if (mouseDownAt === 0) return;
+
+    const mouseDelta = parseFloat(mouseDownAt) - e.clientX, maxDelta = window.innerWidth / 2;
+    const percentage = (mouseDelta / maxDelta) * -100,
+    nextPercentage = parseFloat(prevPercentage) + percentage;
+
+    setPercentage(nextPercentage);
+
+    document.getElementById('image-track').style.transform = `translate(${nextPercentage}%, -50%)`;
+  }
+  window.onmouseup = () => {
+    setMouseDownAt(0);
+    setPrevPercentage(percentage);
+  }
   return (
     <div className="h-screen w-screen bg-primary overflow-hidden">
-      <div className="flex absolute left-1/2 top-1/2 -translate-y-1/2">
+      <div id='image-track' className="flex absolute left-1/2 top-1/2 -translate-y-1/2">
         <ShootingPreview imgUrl={primary1} />
         <ShootingPreview imgUrl={primary2} />
         <ShootingPreview imgUrl={bg1} />
