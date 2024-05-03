@@ -25,8 +25,8 @@ const Gallery = () => {
   const [prevPercentage, setPrevPercentage] = useState(0);
 
   const handleMouseDown = (e) => {
-    console.log(e.clientX);
-    setMouseDownAt(e.clientX);
+    const position = e.touches ? e.touches[0].clientX : e.clientX;
+    setMouseDownAt(position);
   };
 
   // window.onmousemove = (e) => {
