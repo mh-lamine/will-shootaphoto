@@ -42,7 +42,7 @@ const Gallery = () => {
     setPrevPercentage(percentage);
   }
   return (
-    <div className="h-screen w-screen bg-primary overflow-hidden">
+    <div className="h-screen w-screen bg-primary overflow-hidden relative">
       <div id='image-track' className="flex absolute left-1/2 top-1/2 -translate-y-1/2">
         <ShootingPreview imgUrl={primary1} />
         <ShootingPreview imgUrl={primary2} />
