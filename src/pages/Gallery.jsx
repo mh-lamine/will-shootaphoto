@@ -24,44 +24,38 @@ const Gallery = () => {
   const [percentage, setPercentage] = useState(0);
   const [prevPercentage, setPrevPercentage] = useState(0);
 
-  const handleMouseDown = (e) => {
-    const position = e.touches ? e.touches[0].clientX : e.clientX;
-    setMouseDownAt(position);
-  };
+  // const handleMouseDown = (e) => {
+  //   const position = e.touches ? e.touches[0].clientX : e.clientX;
+  //   setMouseDownAt(position);
+  // };
 
-  // window.onmousemove = (e) => {
-  const handleMouseMove = (e) => {
-    if (mouseDownAt === 0) return;
+  // const handleMouseMove = (e) => {
+  //   if (mouseDownAt === 0) return;
 
-    const mouseDelta = parseFloat(mouseDownAt) - e.clientX,
-      maxDelta = window.innerWidth / 2;
-    const percentage = (mouseDelta / maxDelta) * -100,
-      nextPercentage = parseFloat(prevPercentage) + percentage;
+  //   const mouseDelta = parseFloat(mouseDownAt) - e.clientX,
+  //     maxDelta = window.innerWidth / 2;
+  //   const percentage = (mouseDelta / maxDelta) * -100,
+  //     nextPercentage = parseFloat(prevPercentage) + percentage;
 
-    setPercentage(nextPercentage);
+  //   setPercentage(nextPercentage);
 
-    document.getElementById(
-      "image-track"
-    ).style.transform = `translate(${nextPercentage}%, -50%)`;
+  //   document.getElementById(
+  //     "image-track"
+  //   ).style.transform = `translate(${nextPercentage}%, -50%)`;
+  // };
 
-    // for (const image of document.getElementsByClassName("dragg")) {
-    //   image.style.objectPosition = `${nextPercentage + 100}% 50%`;
-    // }
-  };
+  // const handleMouseUp = () => {
+  //   setMouseDownAt(0);
+  //   setPrevPercentage(percentage);
+  // };
 
-  // window.onmouseup = () => {
-  const handleMouseUp = () => {
-    setMouseDownAt(0);
-    setPrevPercentage(percentage);
-  };
-
-  isMobile
-    ? ((window.ontouchstart = handleMouseDown),
-      (window.ontouchmove = handleMouseMove),
-      (window.ontouchend = handleMouseUp))
-    : ((window.onmousedown = handleMouseDown),
-      (window.onmousemove = handleMouseMove),
-      (window.onmouseup = handleMouseUp));
+  // isMobile
+  //   ? ((window.ontouchstart = handleMouseDown),
+  //     (window.ontouchmove = handleMouseMove),
+  //     (window.ontouchend = handleMouseUp))
+  //   : ((window.onmousedown = handleMouseDown),
+  //     (window.onmousemove = handleMouseMove),
+  //     (window.onmouseup = handleMouseUp));
 
   return (
     <div className="h-screen w-screen bg-primary overflow-hidden relative">
