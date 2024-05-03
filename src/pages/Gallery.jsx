@@ -16,13 +16,13 @@ import bg1 from "../assets/kimono.png";
 import bg2 from "../assets/87B59C6F-8CF2-44FD-B297-2C43FAD85FC8.png";
 import bg3 from "../assets/0510D9A1-A676-4437-A587-D0FDC747F46D.png";
 import ShootingPreview from "../components/ShootingPreview";
-import { useState } from "react";
+// import { useState } from "react";
 // import { isMobile } from "react-device-detect";
 
 const Gallery = () => {
-  const [mouseDownAt, setMouseDownAt] = useState(0);
-  const [percentage, setPercentage] = useState(0);
-  const [prevPercentage, setPrevPercentage] = useState(0);
+  // const [mouseDownAt, setMouseDownAt] = useState(0);
+  // const [percentage, setPercentage] = useState(0);
+  // const [prevPercentage, setPrevPercentage] = useState(0);
 
   // const handleMouseDown = (e) => {
   //   const position = e.touches ? e.touches[0].clientX : e.clientX;
@@ -69,7 +69,7 @@ const Gallery = () => {
         <ShootingPreview imgUrl={bg2} />
         <ShootingPreview imgUrl={bg3} />
       </div>
-      <div className="absolute">{mouseDownAt}</div>
+      {/* <div className="absolute">{mouseDownAt}</div> */}
     </div>
   );
 };
