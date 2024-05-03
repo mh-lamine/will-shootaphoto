@@ -17,7 +17,7 @@ import bg2 from "../assets/87B59C6F-8CF2-44FD-B297-2C43FAD85FC8.png";
 import bg3 from "../assets/0510D9A1-A676-4437-A587-D0FDC747F46D.png";
 import ShootingPreview from "../components/ShootingPreview";
 import { useState } from "react";
-import { isMobile } from "react-device-detect";
+// import { isMobile } from "react-device-detect";
 
 const Gallery = () => {
   const [mouseDownAt, setMouseDownAt] = useState(0);
