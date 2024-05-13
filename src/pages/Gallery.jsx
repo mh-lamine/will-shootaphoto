@@ -41,9 +41,12 @@ const Gallery = () => {
 
     setPercentage(nextPercentage);
 
-    document.getElementById(
-      "image-track"
-    ).style.transform = `translate(${nextPercentage}%, -50%)`;
+    const imageTrack = document.getElementById("image-track");
+    imageTrack.style.transform = `translate(${nextPercentage + 100}%, -50%)`;
+
+    imageTrack.querySelectorAll("img").forEach((image) => {
+      image.style.objectPosition = `${nextPercentage}% 50%`;
+    });
   };
 
   const handleMouseUp = () => {
@@ -63,7 +66,7 @@ const Gallery = () => {
     <div className="h-screen w-screen bg-primary overflow-hidden relative">
       <div
         id="image-track"
-        className="flex absolute left-1/2 top-1/2 -translate-y-1/2"
+        className="flex absolute left-1/2 top-1/2 -translate-y-1/2 gap-4"
       >
         <ShootingPreview imgUrl={primary1} />
         <ShootingPreview imgUrl={primary2} />
@@ -71,7 +74,6 @@ const Gallery = () => {
         <ShootingPreview imgUrl={bg2} />
         <ShootingPreview imgUrl={bg3} />
       </div>
-      <div className="absolute">{mouseDownAt}</div>
     </div>
   );
 };
