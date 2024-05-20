@@ -15,65 +15,35 @@ import primary2 from "../assets/primary2.png";
 import bg1 from "../assets/kimono.png";
 import bg2 from "../assets/87B59C6F-8CF2-44FD-B297-2C43FAD85FC8.png";
 import bg3 from "../assets/0510D9A1-A676-4437-A587-D0FDC747F46D.png";
-import ShootingPreview from "../components/ShootingPreview";
-import { useState } from "react";
-import { isMobile } from "react-device-detect";
 
 const Gallery = () => {
-  const [mouseDownAt, setMouseDownAt] = useState(0);
-  const [percentage, setPercentage] = useState(0);
-  const [prevPercentage, setPrevPercentage] = useState(0);
-
-  const handleMouseDown = (e) => {
-    const position = e.touches ? e.touches[0].clientX : e.clientX;
-    setMouseDownAt(position);
-  };
-
-  const handleMouseMove = (e) => {
-    if (mouseDownAt === 0) return;
-
-    const position = e.touches ? e.touches[0].clientX : e.clientX;
-
-    const mouseDelta = parseFloat(mouseDownAt) - position,
-      maxDelta = window.innerWidth / 2;
-    const percentage = (mouseDelta / maxDelta) * -100,
-      nextPercentage = parseFloat(prevPercentage) + percentage;
-
-    setPercentage(nextPercentage);
-
-    const imageTrack = document.getElementById("image-track");
-    imageTrack.style.transform = `translate(${nextPercentage + 100}%, -50%)`;
-
-    imageTrack.querySelectorAll("img").forEach((image) => {
-      image.style.objectPosition = `${nextPercentage}% 50%`;
-    });
-  };
-
-  const handleMouseUp = () => {
-    setMouseDownAt(0);
-    setPrevPercentage(percentage);
-  };
-
-  isMobile
-    ? ((window.ontouchstart = handleMouseDown),
-      (window.ontouchmove = handleMouseMove),
-      (window.ontouchend = handleMouseUp))
-    : ((window.onmousedown = handleMouseDown),
-      (window.onmousemove = handleMouseMove),
-      (window.onmouseup = handleMouseUp));
-
   return (
-    <div className="h-screen w-screen bg-primary overflow-hidden relative">
-      <div
-        id="image-track"
-        className="flex absolute left-1/2 top-1/2 -translate-y-1/2 gap-4"
-      >
-        <ShootingPreview imgUrl={primary1} />
-        <ShootingPreview imgUrl={primary2} />
-        <ShootingPreview imgUrl={bg1} />
-        <ShootingPreview imgUrl={bg2} />
-        <ShootingPreview imgUrl={bg3} />
-      </div>
+    <div className="bg-primary w-screen h-screen flex p-20 gap-8 overflow-x-scroll">
+      <img
+        src={primary1}
+        draggable="false"
+        className="w-72 h-full object-cover object-center"
+      />
+      <img onClick={() => console.log("clicked")}
+        src={primary2}
+        draggable="false"
+        className="w-72 h-full object-cover object-center"
+      />
+      <img
+        src={bg1}
+        draggable="false"
+        className="w-72 h-full object-cover object-center"
+      />
+      <img
+        src={bg2}
+        draggable="false"
+        className="w-72 h-full object-cover object-center"
+      />
+      <img
+        src={bg3}
+        draggable="false"
+        className="w-72 h-full object-cover object-center"
+      />
     </div>
   );
 };
